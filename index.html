@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Tía!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- VISTA 1: PORTADA -->
+    <div class="container" id="welcome-view">
+        <div class="welcome-badge">✨ Experiencia Exclusiva NFC ✨</div>
+        <h1>¡Feliz Cumpleaños, Tita!</h1>
+        <p>Has abierto un cofre de recuerdos muy especial. Supera los 5 minijuegos clásicos, consigue todas las letras ocultas y descubre tu sorpresa final.</p>
+        <button class="btn-primary" onclick="goToMenu()">Comenzar Aventura 🚀</button>
+    </div>
+
+    <!-- VISTA 2: MENÚ DE JUEGOS Y PROGRESO -->
+    <div class="container hidden" id="menu-view">
+        <h1>Menú de Desafíos</h1>
+        <p>Supera cada juego para conseguir la letra secreta y la foto correspondiente.</p>
+
+        <div class="progress-container">
+            <div class="progress-title">TUS LETRAS RECOLECTADAS</div>
+            <div class="letter-slots" id="letter-slots-container"></div>
+        </div>
+
+        <div class="games-grid" id="games-grid"></div>
+
+        <div class="final-box hidden" id="final-section">
+            <h3>🔐 ¡Felicidades! Tienes todas las pistas</h3>
+            <p>Introduce la palabra secreta formada para ver el vídeo final y tu regalo:</p>
+            <div class="secret-input-group">
+                <input type="text" id="secret-input" placeholder="PALABRA SECRETA">
+                <button class="btn-primary" onclick="checkSecret()">Desbloquear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PARA MINIJUEGOS -->
+    <div class="modal" id="game-modal">
+        <div class="modal-content" id="modal-content-box">
+            <span class="close-modal" onclick="closeGame()">&times;</span>
+            <h2 id="modal-title" style="color: var(--primary); margin-bottom: 10px;">Minijuego</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- VISTA 3: VÍDEO FINAL Y REGALO -->
+    <div class="container hidden" id="video-view">
+        <h1>💖 ¡Lo has conseguido! 💖</h1>
+        <p>Has completado todos los retos. Disfruta de vuestro vídeo de recuerdos:</p>
+        
+        <!-- Cambia este enlace por tu vídeo real -->
+        <iframe src="cumpleaños.mp4" allowfullscreen></iframe>
+        
+        <div class="gift-box">
+            <h3>🎁 Además del video tienes tu regalo físico</h3>
+            <p><b>FELICIDADES, TITA!</b></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
